@@ -1,48 +1,60 @@
-# STREAM VAULT
+# STREAM VAULT — Video Upload, Processing & Streaming App
 
-**Use your preferred IDE**
+## Overview
+Stream Vault is a full-stack video upload, processing, and streaming application. Users can upload videos, track real-time processing progress, and stream processed videos using HTTP range-based playback. The system supports authentication, role-based access control, and multi-tenant user isolation.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
+## Tech Stack
+**Frontend**
+- React (Vite)
 - TypeScript
-- React
-- shadcn-ui
 - Tailwind CSS
+- shadcn-ui
 
+**Backend**
+- Node.js + Express
+- MongoDB + Mongoose
+- Multer (file upload)
+- Socket.io (real-time updates)
+- FFmpeg / processing simulation
+- HTTP Range streaming API
+- JWT authentication & RBAC
+
+## Features
+- Video upload with metadata storage  
+- Processing pipeline with progress tracking  
+- Sensitivity classification (safe / flagged — simulated)  
+- Real-time processing updates via WebSockets  
+- Secure video streaming using HTTP range requests  
+- Role-based access control (Viewer / Editor / Admin)  
+- Multi-tenant user isolation  
+- MongoDB-based video and status tracking  
+
+## Project Structure
+- backend/
+- frontend/
+- README.md
+
+## Local Development Setup
+
+### Prerequisites
+- Node.js and npm
+- MongoDB (local or cloud)
+
+### Installation
+- git clone <REPO_URL>
+- cd <PROJECT_NAME>
+- npm install
+- npm run dev
+
+
+## Environment Variables
+Create a `.env` file and configure the following:
+- MONGO_URI
+- JWT_SECRET
+- PORT
+
+
+## Notes
+- The processing pipeline currently uses a simulated classifier  
+- The architecture is designed to support real FFmpeg integration  
+- The project can be extended for cloud storage and distributed processing  
